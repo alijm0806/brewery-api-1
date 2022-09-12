@@ -1,0 +1,14 @@
+### PUbs index
+get http://localhost:3000/pubs
+
+### PUbs index
+get http://localhost:3000/pubsearch
+
+### PUb search
+get http://localhost:3000/pubs
+Content-Type: application/json
+
+{
+  "address": "sal;fjasl;kdfjals;kf"
+} 
+>user input of address
