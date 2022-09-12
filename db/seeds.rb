@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+require "csv"
+
+CSV.foreach(Rails.root.join("lib/seed_csv/breweries_us.csv"), headers: true) do |row|
+  Pub.create({
+    address: row["address"],
+    website: row["website"],
+    brewery_type: row["type"],
+    state: row["state"],
+    brewery_name: row["brewery_name"],
+    state_breweries: row["state_breweries"],
+  })
+end
